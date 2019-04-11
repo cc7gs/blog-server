@@ -6,12 +6,12 @@ import crypto from 'crypto'
 import { controller, put, del, post, get, required } from '../decorator/router'
 import config from '../config'
 
-import { signUp, findOne } from '../controllers/user'
+import { signUp, findOne, edite,md5Decode} from '../controllers/user'
 
 import { resError, resSuccess } from '../utils/resHandle'
 
 // md5 编码
-const md5Decode = pwd => crypto.createHash('md5').update(pwd).digest('hex')
+
 
 @controller(`${config.APP.ROOT_PATH}/user`)
 export class userController {
@@ -22,10 +22,9 @@ export class userController {
 		const { username, password } = ctx.request.body;
 		try {
 			let result = await findOne(username);
-			console.log(result,'findUser');
 			if (!result) {
 				const decPassword = md5Decode(password);
-				const user = await signUp({username,password:decPassword})
+				const user = await signUp({ username, password: decPassword })
 				console.log(user, '添加用户');
 				resSuccess({ ctx, message: '添加用户成功' })
 
@@ -43,7 +42,6 @@ export class userController {
 		const { username, password } = ctx.request.body
 		try {
 			const user = await findOne(username)
-			console.log('login', user);
 			//WebToken 保存时间
 			const expDate = Math.floor(Date.now() / 1000) + (60 * 60 * 24 * 7)
 			if (user) {
@@ -53,7 +51,7 @@ export class userController {
 						password: user.password,
 						exp: expDate
 					}, config.User.jwtTokenSecret)
-					resSuccess({ ctx, result: { token, lifeTime: expDate }, message: "登陆成功" })
+					resSuccess({ ctx, result: { token, lifeTime: expDate, user }, message: "登陆成功" })
 				} else {
 					resError({ ctx, message: "密码错误!" })
 				}
@@ -62,6 +60,22 @@ export class userController {
 			}
 		} catch (err) {
 			resError({ ctx, message: '查询内部失败', err })
+			console.log(err);
+		}
+	}
+	//修改资料
+	@put('edite')
+	@required({ body: ['newPassword', 'oldPassword'] })
+	async editeInfo(ctx, next) {
+		const opts = ctx.request.body;
+		try {
+			const editUser=await edite(opts);
+			if(editUser){
+				resSuccess({ ctx, message: "修改成功", result: editUser })
+			}
+		} catch (error) {
+			resError({ ctx, message: '修改内部失败', error })
+			console.log(error);
 		}
 	}
 }

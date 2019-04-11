@@ -14,6 +14,7 @@ export default async () => {
     let result = await User.find({}).exec().catch(err => {
         console.log(500, '服务器内部错误-查找admin错误！')
     })
+    console.log('user all',result);
     if(result.length === 0){
         let user = new User({
             username,
