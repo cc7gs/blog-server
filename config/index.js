@@ -25,8 +25,8 @@ const EMAIL = {
 }
 
 const BAIDU = {
-	site: 'blog.ccwgs.top',
-	token: 'xxxxxxx'
+	site: 'www.ccwgs.top',
+	token: '3yn82OHydGo0gNCI'
 }
 
 const APP = {
