@@ -16,6 +16,8 @@ const url = process.env.NODE_ENV === 'production' ? config.MONGODB.prouri : conf
 const debuger = process.env.NODE_ENV !== 'production'
 
 mongoose.Promise = global.Promise
+
+//调试
 mongoose.set('debug', debuger)
 
 // 数据模型引入

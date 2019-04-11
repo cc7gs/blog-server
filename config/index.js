@@ -38,7 +38,7 @@ const APP = {
 const INFO = {
 	name: 'cc_blog',
 	version: '1.0.0',
-	author: 'naice',
+	author: 'cc',
 	site: 'https://ccwgs.top',
 	powered: ['React', 'Nuxt.js', 'Node.js', 'MongoDB', 'koa', 'Nginx']
 }

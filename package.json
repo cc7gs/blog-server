@@ -1,7 +1,7 @@
 {
   "name": "blog-koa",
   "version": "1.0.0",
-  "description": "naice new blog",
+  "description": "cc new blog",
   "main": "index.js",
   "scripts": {
     "start": "nodemon start",
@@ -10,10 +10,10 @@
   },
   "keywords": [
     "koa",
-    "naice",
+    "cc",
     "blog"
   ],
-  "author": "naice",
+  "author": "cc",
   "license": "ISC",
   "dependencies": {
     "babel-register": "^6.26.0",

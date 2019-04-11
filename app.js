@@ -3,11 +3,13 @@ import config from './config'
 import mongoConnect from './mongodb'
 import Route from './decorator/router'
 import { resolve } from 'path';
+import bodyParser from 'koa-bodyparser'
 const app = new Koa();
 //连接数据库
 mongoConnect();
 
 //使用中间件
+app.use(bodyParser())
 //引用路由
 const router = new Route(app, resolve(__dirname, './routers'))
 //初始化路由

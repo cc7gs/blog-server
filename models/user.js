@@ -5,7 +5,7 @@ import config from '../config'
 
 const userSchema = new mongoose.Schema({
 	// 名字
-	name: { type: String, default: 'naice' },
+	name: { type: String, default:config.User.defaultUsername},
 
 	username: {
 		type: String,

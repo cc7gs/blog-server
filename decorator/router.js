@@ -1,5 +1,6 @@
 import Router from 'koa-router'
 import glob from 'glob'
+import R from 'ramda'
 import { resolve } from 'path';
 import _ from 'lodash';
 /**
@@ -37,7 +38,7 @@ export default class Route {
       if (prefixPath) prefixPath = normalizePath(prefixPath);
       const routerPath = prefixPath + conf.path;
       console.log(routerPath);
-      this.router[conf.method](routerPath,...controllers);
+      this.router[conf.method](routerPath, ...controllers);
     }
     this.app.use(this.router.routes());
     this.app.use(this.router.allowedMethods());
@@ -82,3 +83,21 @@ const decorate = (args, middleware) => {
 
   return descriptor
 }
+export const convert = middleware => (...args) => decorate(args, middleware)
+
+// required装饰器
+export const required = rules => convert(async (ctx, next) => {
+  let errors = []
+
+  const passRules = R.forEachObjIndexed(
+    (value, key) => {
+      errors = R.filter(i => !R.has(i, ctx.request[key]))(value)
+    }
+  )
+
+  passRules(rules)
+
+  if (errors.length) ctx.throw(412, `${errors.join(', ')} 参数缺失`)
+
+  await next()
+})
