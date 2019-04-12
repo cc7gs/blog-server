@@ -3,7 +3,7 @@ import xss from 'xss'
 // 评论路由
 import { controller, put, del, post, get, required } from '../decorator/router'
 import config from '../config'
-import { putComment, delectComment, 
+import { putComment, deleteComment, 
 				editeComment, getComment, 
         changeCommentStates, likeComment } from '../controllers/comment'
 import {resError, resSuccess} from '../utils/resHandle'
@@ -47,12 +47,12 @@ export class commentController {
 		}
 	}
 	// 删除评论
-	@del('delect/:id')
+	@del('delete/:id')
 	async removeComment (ctx, next) {
 		const { id } = ctx.params
 		if (id) {
 			try {
-				const res = await delectComment(id)
+				const res = await deleteComment(id)
 				resSuccess({ ctx, message: '删除评论成功'})
 			} catch(err) {
 				resError({ ctx, message: '删除评论失败', err: err})
@@ -62,7 +62,7 @@ export class commentController {
 		}
 	}
 	// 编辑评论
-	@put('edite/:id')
+	@put('edit/:id')
 	async toEditeComment (ctx, next) {
 		const { id } = ctx.params
 		if (id) {

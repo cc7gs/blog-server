@@ -6,7 +6,7 @@ import crypto from 'crypto'
 import { controller, put, del, post, get, required } from '../decorator/router'
 import config from '../config'
 
-import { signUp, findOne, edite,md5Decode} from '../controllers/user'
+import { signUp, findOne, edit,md5Decode} from '../controllers/user'
 
 import { resError, resSuccess } from '../utils/resHandle'
 
@@ -64,12 +64,12 @@ export class userController {
 		}
 	}
 	//修改资料
-	@put('edite')
+	@put('edit')
 	@required({ body: ['newPassword', 'oldPassword'] })
-	async editeInfo(ctx, next) {
+	async editInfo(ctx, next) {
 		const opts = ctx.request.body;
 		try {
-			const editUser=await edite(opts);
+			const editUser=await edit(opts);
 			if(editUser){
 				resSuccess({ ctx, message: "修改成功", result: editUser })
 			}

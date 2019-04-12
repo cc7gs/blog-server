@@ -32,7 +32,7 @@ export const getUserInfo = async (username) => {
  * @param {*} opts 
  */
 export const md5Decode = pwd => crypto.createHash('md5').update(pwd).digest('hex')
-export const edite = async (opts = {}) => {
+export const edit = async (opts = {}) => {
 
 	const { name, username, slogan, gravatar, oldPassword, newPassword } = opts
 	const user = await User.findOne({ username }, '_id name slogan gravatar password role')

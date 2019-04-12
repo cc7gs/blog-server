@@ -4,7 +4,7 @@
 import { controller, put, del, post, get, required } from '../decorator/router'
 import config from '../config'
 import {
-  putProject, delectProject,
+  putProject, deleteProject,
   editeProject, getProjectById,
   getProjects
 } from '../controllers/project'
@@ -57,12 +57,12 @@ export class articleController {
     }
   }
   // 删除项目
-  @del('delect/:id')
+  @del('delete/:id')
   async removeProject(ctx, next) {
     const { id } = ctx.params
     if (id) {
       try {
-        const res = await delectProject(id)
+        const res = await deleteProject(id)
         resSuccess({ ctx, message: '删除项目成功' })
       } catch (err) {
         resError({ ctx, message: '删除项目失败', err: err })
@@ -72,7 +72,7 @@ export class articleController {
     }
   }
   // 编辑项目
-  @post('edite/:id')
+  @post('edit/:id')
   async toEditeProject(ctx, next) {
     const { id } = ctx.params
     if (id) {

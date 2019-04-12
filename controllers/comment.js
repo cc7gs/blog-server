@@ -44,7 +44,7 @@ export const putComment = async (ctx, comment) => {
  * 删除评论
  * @param {评论id} _id 
  */
-export const delectComment = async (_id) => {
+export const deleteComment = async (_id) => {
   return await Comment.findByIdAndRemove(_id)
 }
 

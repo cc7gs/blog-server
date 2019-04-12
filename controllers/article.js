@@ -93,7 +93,7 @@ export const getAllArticles = async () => {
  * @param {文章id} id 
  * @param {修改内容} opt 
  */
-export const editeArticle = async (id, opt) => {
+export const editArticle = async (id, opt) => {
   return await Article.findByIdAndUpdate(id, opt)
 }
 /**

@@ -17,7 +17,7 @@ export const putProject = async (opts) => {
  * 删除项目
  * @param {项目id} _id 
  */
-export const delectProject = async (_id) => {
+export const deleteProject = async (_id) => {
   return await Project.findByIdAndRemove(_id)
 }
 

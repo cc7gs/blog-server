@@ -4,7 +4,7 @@ import {
   getArticleById,
   getAllArticles,
   getArticles,
-  editeArticle,
+  editArticle,
   deleteArticle,
   changeArticleStatus,
   likeArticle,
@@ -75,12 +75,12 @@ export class articleController {
 
   }
   //编辑文章
-  @post('edite/:id')
-  async toEditeArticle(ctx, next) {
+  @post('edit/:id')
+  async toEditedArticle(ctx, next) {
     const { id } = ctx.params;
     if (id) {
       try {
-        const res = await editeArticle(id, ctx.request.body);
+        const res = await editArticle(id, ctx.request.body);
         resSuccess({ ctx, message: '修改文章成功' });
       } catch (error) {
         resError({ ctx, message: '修改文章失败', error })
