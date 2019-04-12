@@ -16,6 +16,7 @@ const QINIU = {
 const User = {
 	jwtTokenSecret: 'cc_blog',
 	defaultUsername: 'cc',
+	defaultRealName:"吴晨晨",
 	defaultPassword: '123456'
 }
 

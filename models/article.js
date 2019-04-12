@@ -1,9 +1,7 @@
-'use strict'
-// 文章数据模型
-
 import mongoose from 'mongoose'
 import mongoosePaginate from 'mongoose-paginate'
 
+// 文章数据模型
 const articleSchema = new mongoose.Schema({
   
   // 文章标题

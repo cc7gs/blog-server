@@ -1,11 +1,11 @@
-// 权限和用户数据模型
 import mongoose from 'mongoose'
 import crypto from 'crypto'
 import config from '../config'
 
+// 用户数据模型
 const userSchema = new mongoose.Schema({
 	// 名字
-	name: { type: String, default:config.User.defaultUsername},
+	realName: { type: String,default:''},
 
 	username: {
 		type: String,

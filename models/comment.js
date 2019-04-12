@@ -1,9 +1,8 @@
-'use strict'
 
-// 评论数据模型
 import mongoose from 'mongoose'
 import mongoosePaginate from 'mongoose-paginate'
 
+// 评论数据模型
 const commentSchema = new mongoose.Schema({
 
 	// 评论所在的文章_id，0代表系统留言板

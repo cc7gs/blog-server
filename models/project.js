@@ -1,9 +1,9 @@
 'use strict'
-// 文章数据模型
 
 import mongoose from 'mongoose'
 import mongoosePaginate from 'mongoose-paginate'
 
+// 项目数据模型
 const projectSchema = new mongoose.Schema({
 	// 文章标题
 	title: { type: String, required: true },

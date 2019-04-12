@@ -1,6 +1,4 @@
-'use strict'
 
-// 评论回复数据模型
 import mongoose from 'mongoose'
 import autoIncrement from 'mongoose-auto-increment'
 import mongoosePaginate from 'mongoose-paginate'
@@ -8,7 +6,7 @@ import mongoosePaginate from 'mongoose-paginate'
 // 自增ID初始化
 autoIncrement.initialize(mongoose.connection)
 
-// 标签模型
+// 回复评论模型
 const replySchema = new mongoose.Schema({
 
 	// 评论所在的文章_id

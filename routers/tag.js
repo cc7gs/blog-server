@@ -30,7 +30,7 @@ export class tagController {
     }
   }
 
-  @del('delect/:id')
+  @del('delete/:id')
   async removeTag(ctx, next) {
     const { id } = ctx.params
     if (id) {

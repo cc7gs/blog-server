@@ -1,8 +1,3 @@
-/*
-*
-* 标签数据模型
-*
-*/
 
 import mongoose from 'mongoose'
 import mongoosePaginate from 'mongoose-paginate'
