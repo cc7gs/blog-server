@@ -6,11 +6,11 @@ const MONGODB = {
 }
 
 const QINIU = {
-	accessKey: 'your_qn_accessKey',
-	secretKey: 'your_qn_secretKey',
-	bucket: 'naice',
-	origin: 'xxxxxx',
-	uploadURL: 'your_qn_uploadURL'
+	accessKey: 'LO2GBu-DVZ5bbWbIhFc8fpbjfMYGHmCmaOC4B9fl',
+	secretKey: 'dYWT_ZXXt9wxNdBsr1Fii0tdDKoBDoLJyij_J7M6',
+	bucket: 'blog',
+	origin: 'img.store.ccwgs.top',
+	uploadURL: 'http://img.store.ccwgs.top'
 }
 
 const User = {

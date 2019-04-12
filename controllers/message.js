@@ -30,7 +30,7 @@ export const putMessage = async (ctx, options) => {
 }
 
 /**
- * 删除浏览墙
+ * 删除留言墙
  * @param {评论id} _id 
  */
 export const delectMessage = async (_id) => {
