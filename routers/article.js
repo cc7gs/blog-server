@@ -75,7 +75,7 @@ export class articleController {
 
   }
   //编辑文章
-  @post('edit/:id')
+  @put('edit/:id')
   async toEditedArticle(ctx, next) {
     const { id } = ctx.params;
     if (id) {

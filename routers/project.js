@@ -72,7 +72,7 @@ export class articleController {
     }
   }
   // 编辑项目
-  @post('edit/:id')
+  @put('edit/:id')
   async toEditeProject(ctx, next) {
     const { id } = ctx.params
     if (id) {

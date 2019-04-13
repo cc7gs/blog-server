@@ -5,7 +5,8 @@ glob.sync(resolve(this.apiPath,'./*.js')).forEach(res=>{
         console.log(res,'res');
 })
 ```
-
+# 安全相关
+helmet 可以隐藏 HTTP header中 x-开头的信息,免受攻击者获取网站信息,从而提升应用安全性
 # 搭建node 环境
 ## 通过babel 搭建node环境
 
