@@ -65,7 +65,7 @@ export class MusicController {
 	async toUpload (ctx, next) {
 		try {
 			const res = await upload(ctx);
-			console.log(res,'xxx');
+			console.log(res,'upload 提示');
 			resSuccess({ ctx, message: '上传成功', result: `http://img.store.ccwgs.top/${res.key}`})
 		} catch(err) {
 			resError({ ctx, message: '上传失败', err: err});

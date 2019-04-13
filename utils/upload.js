@@ -48,8 +48,8 @@ export const upToQiniu = (filePath, key) => {
   const uploadToken = putPolicy.uploadToken(mac)
 
   const config = new qiniu.conf.Config()
-  // 空间对应的机房
-  config.zone = qiniu.zone.Zone_z2
+  // 空间对应的机房 一定要按自己属区Zone对象
+  config.zone = qiniu.zone.Zone_z0
   const localFile = filePath
   const formUploader = new qiniu.form_up.FormUploader(config)
   const putExtra = new qiniu.form_up.PutExtra()

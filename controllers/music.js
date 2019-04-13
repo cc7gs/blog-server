@@ -55,11 +55,12 @@ export const upload = async (ctx) => {
     fileType: 'poster',
     path: serverPath
 	})
-	console.log(result,'图片信息');
 	const imgPath = path.join(serverPath, result.imgPath)
-  // 上传到七牛
-	// const qiniu = await upToQiniu(imgPath, result.imgKey)
+	// 上传到七牛
+	console.log(imgPath,result.imgKey,'图片信息');
+	
+	const qiniu = await upToQiniu(imgPath, result.imgKey)
   // 上传到七牛之后 删除原来的缓存文件
-	// removeTemFile(imgPath)
-	return imgPath
+	removeTemFile(imgPath)
+	return qiniu
 }
