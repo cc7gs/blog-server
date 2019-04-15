@@ -22,7 +22,7 @@ const sendMailToAdminAndTargetUser = (comment) => {
 @controller(`${config.APP.ROOT_PATH}/comment`)
 export class commentController {
 	// 添加评论
-	@put('add')
+	@post('add')
 	@required({body: ['post_id', 'content', 'author']})
 	async addComment (ctx, next) {
 		let opts = ctx.request.body
