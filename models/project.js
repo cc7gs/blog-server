@@ -5,7 +5,7 @@ import mongoosePaginate from 'mongoose-paginate'
 
 // 项目数据模型
 const projectSchema = new mongoose.Schema({
-	// 文章标题
+	// 项目名称
 	title: { type: String, required: true },
 	// 描述
 	descript: { type: String, required: true },

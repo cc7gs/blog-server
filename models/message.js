@@ -1,6 +1,5 @@
-'use strict'
 
-// 英雄版数据模型
+//留言数据模型
 import mongoose from 'mongoose'
 import mongoosePaginate from 'mongoose-paginate'
 

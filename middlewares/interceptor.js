@@ -40,9 +40,12 @@ export default async (ctx, next) => {
 	const isCommentLike = ctx.request.url.indexOf('api/comment/like') >= 0 && Object.is(ctx.request.method, 'POST');
 	// const isPostAuth = Object.is(ctx.request.url, '/api/auth') && Object.is(ctx.request.method, 'POST');
 	const isLogin = ctx.request.url.indexOf('api/user/login') >= 0 && Object.is(ctx.request.method, 'POST');
-	const isHero = Object.is(ctx.request.url, 'api/message/add') && Object.is(ctx.request.method, 'POST');
+	const isHero = Object.is(ctx.request.url, '/api/message/add') && Object.is(ctx.request.method, 'POST');
 	const isPostComment = Object.is(ctx.request.url, '/api/comment/add') && Object.is(ctx.request.method, 'POST');
 	const isPostReply = Object.is(ctx.request.url, '/api/reply/add') && Object.is(ctx.request.method, 'POST');
+	console.log('============auth========================');
+	console.log(isHero, isPostComment,);
+	console.log('====================================');
 	if (isLike || isCommentLike || isPostComment || isLogin || isHero || isPostReply) {
 		await next();
 		return false;
