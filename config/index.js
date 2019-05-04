@@ -6,28 +6,28 @@ const MONGODB = {
 }
 
 const QINIU = {
-	accessKey: 'LO2GBu-DVZ5bbWbIhFc8fpbjfMYGHmCmaOC4B9fl',
-	secretKey: 'dYWT_ZXXt9wxNdBsr1Fii0tdDKoBDoLJyij_J7M6',
-	bucket: 'blog',
+	accessKey: 'xxxxx',
+	secretKey: 'xxxx',
+	bucket: 'xxx',
 	origin: 'img.store.ccwgs.top',
-	uploadURL: 'http://img.store.ccwgs.top'
+	uploadURL: 'xxxxxxxxxxxxxxxx'
 }
 
 const User = {
 	jwtTokenSecret: 'cc_blog',
 	defaultUsername: 'cc',
 	defaultRealName:"吴晨晨",
-	defaultPassword: '123456'
+	defaultPassword: 'xxxxxxxxxxxxxxxx'
 }
 
 const EMAIL = {
 	account: 'chenorange12@gmail.com',
-	password: 'cc101303'
+	password: 'xxxxxxxxxxxxxxxx'
 }
 
 const BAIDU = {
 	site: 'www.ccwgs.top',
-	token: '3yn82OHydGo0gNCI'
+	token: 'xxxxxxxxxxxxxxxx'
 }
 
 const APP = {
